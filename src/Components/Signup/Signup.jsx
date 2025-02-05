@@ -1,6 +1,6 @@
 import '../Signup/Signup.css'
 import logoImg from '../../assets/ytLogo.png'
-import { useState, useNaigate } from 'react'
+import { useState, useNavigate } from 'react'
 import axios from 'axios';
 
 const Signup = () => {
@@ -12,7 +12,7 @@ const Signup = () => {
   const [imageUrl, setImageUrl] = useState('');
   const [isLoading, setLoading] = useState(false);
 
-  const navigate = useNaigate();
+  const navigate = useNavigate();
 
   const fileHandler = (e) => {
     console.log(e.target.files[0]);
