@@ -61,25 +61,37 @@
 .Signup__wrapper__form__contant__btn {
   width: 100%;
   height: 3rem;
-  margin-bottom: 1rem;
   border-radius: 20px;
   outline: none;
   border: none;
   font-size: 1.4rem;
   color: #fff;
   background: #e92d2d;
-  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.Signup__wrapper__form__contant__btn:hover{
+.Signup__wrapper__form__contant__btn i {
+  width: 0;
+  margin-right: 1rem;
+  text-align: center;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.Signup__wrapper__form__contant__btn:hover {
   background: #e92d2dd0;
 }
 
-.Signup__wrapper__form__contant__img{
- width: 150px;
- height: 150px;
- border-radius: 50%;
- border: 1.1px solid #fff;
+.Signup__wrapper__form__contant__img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1.1px solid #fff;
 }
 
 /* Media Queries For screen size 1000px */

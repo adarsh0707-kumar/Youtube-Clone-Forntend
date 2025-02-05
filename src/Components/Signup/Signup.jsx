@@ -1,6 +1,6 @@
 import '../Signup/Signup.css'
 import logoImg from '../../assets/ytLogo.png'
-import { useState } from 'react'
+import { useState, useNaigate } from 'react'
 import axios from 'axios';
 
 const Signup = () => {
@@ -9,7 +9,10 @@ const Signup = () => {
   const [password, setPassword] = useState('')
   const [phone, setPhone] = useState('');
   const [logo, setLogo] = useState(null);
-  const [imageUrl, setImageUrl] = useState('')
+  const [imageUrl, setImageUrl] = useState('');
+  const [isLoading, setLoading] = useState(false);
+
+  const navigate = useNaigate();
 
   const fileHandler = (e) => {
     console.log(e.target.files[0]);
@@ -19,6 +22,7 @@ const Signup = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
+    setLoading(true);
     const formData = new FormData();
     formData.append('channelName', channelName);
     formData.append('email', email);
@@ -28,9 +32,12 @@ const Signup = () => {
 
     axios.post('https://youtube-clone-database.onrender.com/user/signup', formData)
       .then(res => {
+        setLoading(false);
+        navigate('/login')
         console.log(res)
       })
       .catch(err => {
+        setLoading(false);
         console.error(err);
       });
   }
@@ -100,19 +107,20 @@ const Signup = () => {
             }
             type='file' />
 
-          <img
+          {imageUrl && <img
             className="Signup__wrapper__form__contant__img"
             alt='logo-Image'
             src={imageUrl} />
+          }
 
-          <div>
-            <button
-              className="Signup__wrapper__form__contant__btn"
-              type='submit'>
-              Submit
-            </button>
+          <button
+            className="Signup__wrapper__form__contant__btn"
+            type='submit'>
+            {isLoading && < i
+            className="fa-solid fa-circle-notch fa-spin"/>}
+            Submit
+          </button>
 
-          </div>
 
 
         </form>
