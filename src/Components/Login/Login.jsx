@@ -39,6 +39,7 @@ const Login = () => {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('userId', res.data._id);
         localStorage.setItem('channelName', res.data.channelName);
+        localStorage.setItem('logoUrl', res.data.logoUrl);
 
         toast(`Welcome, ${localStorage.getItem('channelName')}!`);
 
