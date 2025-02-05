@@ -40,6 +40,9 @@ const Login = () => {
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('userId', res.data._id);
         localStorage.setItem('channelName', res.data.channelName);
+
+        toast(`Welcome, ${localStorage.getItem('channelName')}!`);
+
       })
       .catch(err => {
         setLoading(false);
