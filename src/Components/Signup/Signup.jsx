@@ -1,12 +1,17 @@
-import '../Signup/Signup.css';
+import '../Signup/Signup.css';  // importing css file
 
-import logoImg from '../../assets/ytLogo.png';
+import logoImg from '../../assets/ytLogo.png'; // importing image
 
+// importing librearies
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+// main function 
 const Signup = () => {
+
+  // making state for reciving data from frontend
+
   const [channelName, setChannelName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
@@ -14,15 +19,16 @@ const Signup = () => {
   const [logo, setLogo] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
   const [isLoading, setLoading] = useState(false);
-
+// navifate state 
   const navigate = useNavigate();
 
+  // raciving the file from frontend
   const fileHandler = (e) => {
     console.log(e.target.files[0]);
     setLogo(e.target.files[0]);
     setImageUrl(URL.createObjectURL(e.target.files[0]));
   }
-
+// submiting the data in database
   const submitHandler = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -46,10 +52,15 @@ const Signup = () => {
   }
 
   return (
+    // main page
     <div
       className="Signup__wrapper">
+
+      {/* form container */}
       <div
         className="Signup__wrapper__form">
+
+        {/* logo and heading  */}
         <div
           className='Signup__wrapper__form__logo'>
 
@@ -66,13 +77,14 @@ const Signup = () => {
         </div>
 
 
-
+        {/* form for reciving data from user  */}
         <form
           className="Signup__wrapper__form__contant"
           onSubmit={submitHandler}>
 
           <input
             required
+            // reciving the channel name
             onChange={(e) => {
               setChannelName(e.target.value)
             }}
@@ -81,6 +93,7 @@ const Signup = () => {
 
           <input
             required
+            // reciving the email
             onChange={(e) => {
               setEmail(e.target.value)
             }}
@@ -89,6 +102,7 @@ const Signup = () => {
 
           <input
             required
+            // reciving the password
             onChange={(e) => {
               setPassword(e.target.value)
             }}
@@ -97,6 +111,7 @@ const Signup = () => {
 
           <input
             required
+            // reciving the phone number
             onChange={(e) => {
               setPhone(e.target.value)
             }}
@@ -105,11 +120,13 @@ const Signup = () => {
 
           <input
             required
+            // reciving the logo file ex. image and etc.
             onChange={
               fileHandler
             }
             type='file' />
-
+          
+          {/* showing selected logo img  */}
           {imageUrl && <img
             className="Signup__wrapper__form__contant__img"
             alt='logo-Image'
@@ -119,6 +136,7 @@ const Signup = () => {
           <button
             className="Signup__wrapper__form__contant__btn"
             type='submit'>
+            {/* loader that show the time delay in saving the data in database  */}
             {isLoading && < i
             className="fa-solid fa-circle-notch fa-spin"/>}
             Submit
