@@ -73,8 +73,10 @@ const Signup = () => {
               fileHandler()
             } 
             type='file' />
+          
           <img
-            alt='logo Image'
+            className="Signup__wrapper__form__contant__img"
+            alt='logo-Image'
             src={imageUrl} />
 
           <div>
