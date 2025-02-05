@@ -70,6 +70,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: .3rem;
 }
 
 .Login__wrapper__form__contant__btn i {

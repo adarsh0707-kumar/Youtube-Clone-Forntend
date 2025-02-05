@@ -4,8 +4,9 @@ import logoImg from '../../assets/ytLogo.png'; // importing image
 
 // importing librearies
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Login from '../Login/Login';
 
 // main function 
 const Signup = () => {
@@ -143,8 +144,9 @@ const Signup = () => {
           </button>
 
 
-
+          <p style={{ textAlign: 'center', marginBottom: '1rem' }}>Already have an account? <Link to="/login">Login</Link></p>
         </form>
+        
 
 
       </div>

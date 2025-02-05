@@ -70,6 +70,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: .3rem;
 }
 
 .Signup__wrapper__form__contant__btn i {
@@ -88,8 +89,8 @@
 }
 
 .Signup__wrapper__form__contant__img {
-  width: 150px;
-  height: 150px;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   border: 1.1px solid #fff;
 }

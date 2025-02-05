@@ -5,8 +5,9 @@ import logoImg from '../../assets/ytLogo.png'; // importing image
 
 // importing librearies
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 // main function 
 const Login = () => {
@@ -35,7 +36,9 @@ const Login = () => {
         setLoading(false);
         // navigate('/login')
         console.log(res);
-        
+        localStorage.setItem('token', res.data.token);
+        localStorage.setItem('userId', res.data._id);
+        localStorage.setItem('channelName', res.data.channelName);
       })
       .catch(err => {
         setLoading(false);
@@ -103,6 +106,7 @@ const Login = () => {
           </button>
 
 
+          <p style={{ textAlign: 'center', marginBottom: '1rem' }}>Do not have an account? <Link to="/signup">Signup</Link></p>
 
         </form>
 
