@@ -1,13 +1,12 @@
 import '../Signup/Signup.css'
 import logoImg from '../../assets/ytLogo.png'
 import { useState } from 'react'
-import { useActionData } from 'react-router-dom';
 import axios from 'axios';
 
 const Signup = () => {
   const [channelName, setChannelName] = useState('');
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useActionData('')
+  const [password, setPassword] = useState('')
   const [phone, setPhone] = useState('');
   const [logo, setLogo] = useState(null);
   const [imageUrl, setImageUrl] = useState('')
