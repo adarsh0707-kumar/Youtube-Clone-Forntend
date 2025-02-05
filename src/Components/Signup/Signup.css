@@ -10,7 +10,7 @@
 
 .Signup__wrapper__form {
   width: 50%;
-  height: 55vh;
+  height: 70vh;
   background: #141414;
   border-radius: 10px;
   display: flex;
@@ -76,9 +76,10 @@
 }
 
 .Signup__wrapper__form__contant__img{
- width: 50px;
- height: 50px;
+ width: 150px;
+ height: 150px;
  border-radius: 50%;
+ border: 1.1px solid #fff;
 }
 
 /* Media Queries For screen size 1000px */

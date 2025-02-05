@@ -96,7 +96,7 @@ const Signup = () => {
           <input
             required
             onChange={
-              fileHandler()
+              fileHandler
             }
             type='file' />
 
