@@ -5,9 +5,8 @@ import logoImg from '../../assets/ytLogo.png'; // importing image
 
 // importing librearies
 import { useState } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link} from 'react-router-dom';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 // main function 
@@ -21,7 +20,7 @@ const Login = () => {
   const [isLoading, setLoading] = useState(false);
 
   // navifate state 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // submiting the data in database
   const submitHandler = (e) => {
@@ -35,7 +34,7 @@ const Login = () => {
     })
       .then(res => {
         setLoading(false);
-        // navigate('/login')
+        navigate('/dashboard')
         console.log(res);
         localStorage.setItem('token', res.data.token);
         localStorage.setItem('userId', res.data._id);
