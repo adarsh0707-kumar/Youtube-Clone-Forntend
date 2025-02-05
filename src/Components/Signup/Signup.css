@@ -65,9 +65,14 @@
   border-radius: 20px;
   outline: none;
   border: none;
-  padding-left: 2rem;
   font-size: 1.4rem;
   color: #fff;
+  background: #e92d2d;
+  padding-bottom: 15px;
+}
+
+.Signup__wrapper__form__contant__btn:hover{
+  background: #e92d2dd0;
 }
 
 /* Media Queries For screen size 1000px */
