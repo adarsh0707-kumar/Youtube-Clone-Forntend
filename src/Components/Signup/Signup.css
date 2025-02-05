@@ -69,3 +69,68 @@
   font-size: 1.4rem;
   color: #fff;
 }
+
+/* Media Queries For screen size 1000px */
+
+@media only screen and (max-width: 1000px) {
+  .Signup__wrapper__form {
+    width: 60%;
+  }
+
+  .Signup__wrapper__form__contant {
+    width: 90%;
+  }
+
+  .Signup__wrapper__form__contant input {
+    font-size: 1rem;
+  }
+
+  .Signup__wrapper__form__contant__btn {
+    font-size: 1.2rem;
+  }
+
+}
+
+/* For screen size 720px  */
+@media only screen and (max-width: 720px) {
+  .Signup__wrapper__form {
+    width: 70%;
+  }
+
+  .Signup__wrapper__form__contant {
+    width: 95%;
+  }
+
+  .Signup__wrapper__form__contant input {
+    font-size: 0.9rem;
+  }
+
+  .Signup__wrapper__form__contant__btn {
+    font-size: 1.1rem;
+  }
+
+}
+
+/* For screen size 650px */
+@media only screen and (max-width: 650px) {
+  .Signup__wrapper__form {
+    width: 80%;
+  }
+
+  .Signup__wrapper__form__contant {
+    width: 98%;
+  }
+
+  .Signup__wrapper__form__contant input {
+    font-size: 0.8rem;
+  }
+
+  .Signup__wrapper__form__contant__btn {
+    font-size: 1rem;
+  }
+
+  .Signup__wrapper__form__logo__img {
+    width: 10%;
+    margin-left: 20%;
+  }
+}
