@@ -1,8 +1,10 @@
 
+import { ToastContainer } from 'react-toastify';
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
 import './App.css'
 import Login from './Components/Login/Login'
-import Signup from './Components/Signup/Signup'
+import Signup from './Components/Signup/Signup';
+
 
 function App() {
 
@@ -14,7 +16,8 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={myRoutes}/>
+      <RouterProvider router={myRoutes} />
+      <ToastContainer/>
     </>
   )
 }

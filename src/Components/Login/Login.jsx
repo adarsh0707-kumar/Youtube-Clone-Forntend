@@ -8,6 +8,7 @@ import { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 // main function 
 const Login = () => {
@@ -43,6 +44,7 @@ const Login = () => {
       .catch(err => {
         setLoading(false);
         console.error(err);
+        toast.error(err.response.data.error)
       });
   }
 

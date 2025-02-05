@@ -6,7 +6,6 @@ import logoImg from '../../assets/ytLogo.png'; // importing image
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Login from '../Login/Login';
 
 // main function 
 const Signup = () => {
