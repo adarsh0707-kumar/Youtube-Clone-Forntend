@@ -1,7 +1,22 @@
 import '../Signup/Signup.css'
 import logo from '../../assets/ytLogo.png'
+import { useState } from 'react'
+import { useActionData } from 'react-router-dom';
 
 const Signup = () => {
+  const [channelName, setChannelName] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useActionData('')
+  const [phone, setPhone] = useState('');
+  const [logo, setLogo] = useState(null);
+  const [imageUrl, setImageUrl] = useState('')
+
+  const fileHandler = (e) => {
+    console.log(e.target.files[0]);
+    setLogo(e.target.files[0]);
+    setImageUrl(URL.createObjectURL(e.target.files[0]));
+  }
+
   return (
     <div
       className="Signup__wrapper">
@@ -25,11 +40,43 @@ const Signup = () => {
         <div
           className="Signup__wrapper__form__contant">
 
-          <input type='text' placeholder='Channel Name' />
-          <input type='email' placeholder='Email' />
-          <input type='password' placeholder='Password' />
-          <input type='phone' placeholder='Phone' />
-          <input type='file' />
+          <input
+            onChange={(e) => {
+            setChannelName(e.target.value)
+            }}    
+            type='text'
+            placeholder='Channel Name' />
+          
+          <input
+            onChange={(e) => {
+              setEmail(e.target.value)
+            }}  
+            type='email'
+            placeholder='Email' />
+          
+          <input
+            onChange={(e) => {
+              setPassword(e.target.value)
+            }}  
+            type='password'
+            placeholder='Password' />
+
+          <input
+            onChange={(e) => {
+              setPhone(e.target.value)
+            }}  
+            type='phone'
+            placeholder='Phone' />
+
+          <input
+            onChange={
+              fileHandler()
+            } 
+            type='file' />
+          <img
+            alt='logo Image'
+            src={imageUrl} />
+
           <div>
             <button
               className="Signup__wrapper__form__contant__btn"
