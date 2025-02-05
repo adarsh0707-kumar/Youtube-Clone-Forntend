@@ -45,7 +45,7 @@ const Signup = () => {
         setLoading(false);
         navigate('/login');
         console.log(res);
-        toast(res.response.data.msg);
+        toast(res.data.msg);
       })
       .catch(err => {
         setLoading(false);
