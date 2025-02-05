@@ -6,6 +6,7 @@ import logoImg from '../../assets/ytLogo.png'; // importing image
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 // main function 
 const Signup = () => {
@@ -19,7 +20,7 @@ const Signup = () => {
   const [logo, setLogo] = useState(null);
   const [imageUrl, setImageUrl] = useState('');
   const [isLoading, setLoading] = useState(false);
-// navifate state 
+  // navifate state 
   const navigate = useNavigate();
 
   // raciving the file from frontend
@@ -28,7 +29,7 @@ const Signup = () => {
     setLogo(e.target.files[0]);
     setImageUrl(URL.createObjectURL(e.target.files[0]));
   }
-// submiting the data in database
+  // submiting the data in database
   const submitHandler = (e) => {
     e.preventDefault();
     setLoading(true);
@@ -42,12 +43,14 @@ const Signup = () => {
     axios.post('https://youtube-clone-database.onrender.com/user/signup', formData)
       .then(res => {
         setLoading(false);
-        navigate('/login')
-        console.log(res)
+        navigate('/login');
+        console.log(res);
+        toast(res.response.data.msg);
       })
       .catch(err => {
         setLoading(false);
         console.error(err);
+        toast.error(err.response.data.error);
       });
   }
 
@@ -125,7 +128,7 @@ const Signup = () => {
               fileHandler
             }
             type='file' />
-          
+
           {/* showing selected logo img  */}
           {imageUrl && <img
             className="Signup__wrapper__form__contant__img"
@@ -138,14 +141,14 @@ const Signup = () => {
             type='submit'>
             {/* loader that show the time delay in saving the data in database  */}
             {isLoading && < i
-            className="fa-solid fa-circle-notch fa-spin"/>}
+              className="fa-solid fa-circle-notch fa-spin" />}
             Submit
           </button>
 
 
           <p style={{ textAlign: 'center', marginBottom: '1rem' }}>Already have an account? <Link to="/login">Login</Link></p>
         </form>
-        
+
 
 
       </div>
