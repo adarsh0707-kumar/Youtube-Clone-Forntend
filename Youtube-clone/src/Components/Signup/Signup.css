@@ -1,0 +1,71 @@
+.Signup__wrapper {
+  width: 100%;
+  height: 100vh;
+  background-color: #232121;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.Signup__wrapper__form {
+  width: 50%;
+  height: 55vh;
+  background: #141414;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
+
+.Signup__wrapper__form__logo {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Signup__wrapper__form__logo__img {
+  width: 5%;
+  margin-right: 3%;
+  margin-left: 35%;
+}
+
+.Signup__wrapper__form__logo__heading {
+  color: rgb(210, 21, 21);
+}
+
+.Signup__wrapper__form__contant {
+  margin-top: 5%;
+  width: 80%;
+}
+
+.Signup__wrapper__form__contant input {
+  width: 100%;
+  height: 2.5rem;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  padding-left: 2rem;
+  font-size: 1.1rem;
+  color: #000000;
+  background: #fff;
+  padding: 5px;
+  padding-left: 1rem;
+}
+
+.Signup__wrapper__form__contant__btn {
+  width: 100%;
+  height: 3rem;
+  margin-bottom: 1rem;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  padding-left: 2rem;
+  font-size: 1.4rem;
+  color: #fff;
+}
