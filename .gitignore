@@ -1,0 +1,32 @@
+node_modules
+
+# Node.js and npm files
+node_modules/
+package-lock.json
+
+# Vite files
+vite.config.js
+dist/
+build/
+.cache/
+
+# React files
+public/build/
+public/static/
+
+# IDE and editor files
+.vscode/
+.idea/
+.editorconfig
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
+
+# Other files
+.env
+.env.development
+.env.production
