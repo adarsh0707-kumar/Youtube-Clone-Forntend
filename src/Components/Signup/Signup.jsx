@@ -1,7 +1,8 @@
 import '../Signup/Signup.css'
-import logo from '../../assets/ytLogo.png'
+import logoImg from '../../assets/ytLogo.png'
 import { useState } from 'react'
 import { useActionData } from 'react-router-dom';
+import axios from 'axios';
 
 const Signup = () => {
   const [channelName, setChannelName] = useState('');
@@ -17,6 +18,24 @@ const Signup = () => {
     setImageUrl(URL.createObjectURL(e.target.files[0]));
   }
 
+  const submitHandler = (e) => {
+    e.preventDefault();
+    const formData = new FormData();
+    formData.append('channelName', channelName);
+    formData.append('email', email);
+    formData.append('password', password);
+    formData.append('phone', phone);
+    formData.append('logo', logo);
+
+    axios.post('https://youtube-clone-database.onrender.com/user/signup', formData)
+      .then(res => {
+        console.log(res)
+      })
+      .catch(err => {
+        console.error(err);
+      });
+  }
+
   return (
     <div
       className="Signup__wrapper">
@@ -27,9 +46,9 @@ const Signup = () => {
 
           <img
             className='Signup__wrapper__form__logo__img'
-            src={logo} alt='logo'
+            src={logoImg} alt='logo'
           />
-          
+
           <h2
             className='Signup__wrapper__form__logo__heading'>
             Youtube Clone
@@ -37,43 +56,51 @@ const Signup = () => {
 
         </div>
 
-        <div
-          className="Signup__wrapper__form__contant">
+
+
+        <form
+          className="Signup__wrapper__form__contant"
+          onSubmit={submitHandler}>
 
           <input
+            required
             onChange={(e) => {
-            setChannelName(e.target.value)
-            }}    
+              setChannelName(e.target.value)
+            }}
             type='text'
             placeholder='Channel Name' />
-          
+
           <input
+            required
             onChange={(e) => {
               setEmail(e.target.value)
-            }}  
+            }}
             type='email'
             placeholder='Email' />
-          
+
           <input
+            required
             onChange={(e) => {
               setPassword(e.target.value)
-            }}  
+            }}
             type='password'
             placeholder='Password' />
 
           <input
+            required
             onChange={(e) => {
               setPhone(e.target.value)
-            }}  
+            }}
             type='phone'
             placeholder='Phone' />
 
           <input
+            required
             onChange={
               fileHandler()
-            } 
+            }
             type='file' />
-          
+
           <img
             className="Signup__wrapper__form__contant__img"
             alt='logo-Image'
@@ -85,10 +112,12 @@ const Signup = () => {
               type='submit'>
               Submit
             </button>
-          </div>
-          
 
-        </div>
+          </div>
+
+
+        </form>
+
 
       </div>
 
