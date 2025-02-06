@@ -10,7 +10,7 @@ import Dashboard from './Components/Dashboard/Dash/Dashboard';
 function App() {
 
   const myRoutes = createBrowserRouter([
-    { path: '', Component: Dashboard },
+    { path: '', Component: Signup },
     { path: '/signup', Component: Signup },
     { path: '/login', Component: Login },
     {path: '/dashboard', Component: Dashboard},

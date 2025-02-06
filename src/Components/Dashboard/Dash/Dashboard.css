@@ -11,6 +11,8 @@
   width: 17.5%;
   background: rgb(13, 12, 12);
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .Dashboard__content{
@@ -19,9 +21,47 @@
   background: rebeccapurple;
 }
 
+.Dashboard__nav__profile{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 .Dashboard__nav__profile__img{
   width: 120px;
   height: 120px;
   border-radius: 50%;
   border: 1px solid #fffb01;
+  box-shadow: 5px 5px 15px rgb(123, 121,  121);
+}
+
+.Dashboard__nav__profile h2{
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.Dashboard__nav__menu{
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+
+.Dashboard__nav__menu__link{
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.Dashboard__nav__menu__link:hover{
+ background: red;
+ color: #fff;
+ transition: .5s;
 }
